@@ -1,0 +1,20 @@
+[versions]
+awssdk-bom-ver = "2.25.21"
+awssdk-cognitoidentityprovider-ver = "2.25.21"
+spring-boot-ver = "3.2.4"
+dependency-management-ver = "1.1.4"
+mapstruct-ver = "1.5.5.Final"
+[libraries]
+spring-starter-weblux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
+spring-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+lombok = { module = "org.projectlombok:lombok"}
+reactor = {module = "io.projectreactor:reactor-test"}
+mapstruct = {module = "org.mapstruct:mapstruct", version.ref = "mapstruct-ver"}
+mapstruct-processor = {module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct-ver"}
+awssdk-bom = { module = "software.amazon.awssdk:bom", version.ref = "awssdk-bom-ver"}
+awssdk-cognitoidentityprovider = { module = "software.amazon.awssdk:cognitoidentityprovider", version.ref = "awssdk-cognitoidentityprovider-ver"}
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot-ver"}
+dependency-management = { id = "io.spring.dependency-management", version.ref = "dependency-management-ver"}
+[bundles]
+

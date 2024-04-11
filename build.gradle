@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'checkstyle'
+	alias(libs.plugins.spring.boot)
+	alias(libs.plugins.dependency.management)
+}
+
+group = 'java.com.mykytaaa'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation(libs.spring.starter.weblux)
+	compileOnly(libs.lombok)
+	annotationProcessor(libs.lombok)
+	testImplementation(libs.spring.starter.test)
+	testImplementation(libs.reactor)
+	implementation(libs.mapstruct)
+	annotationProcessor(libs.mapstruct.processor)
+
+
+	runtimeOnly(libs.awssdk.bom)
+	implementation(libs.awssdk.cognitoidentityprovider)
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,8 @@
+dependencyResolutionManagement {
+    versionCatalogs {
+        version {
+            from files('gradle/libs.versions.toml')
+        }
+    }
+}
+rootProject.name = 'authentication-service'

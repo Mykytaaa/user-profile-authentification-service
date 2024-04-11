@@ -1,0 +1,6 @@
+aws:
+  region: ${AWS_REGION}
+  cognito-user-pool-access-key-id: ${ACCESS_KEY_ID}
+  cognito-user-pool-secret-access-key-id: ${SECRET_ACCESS_KEY_ID}
+  secret-key: ${AWS_SECRET_KEY}
+  client-id: ${AWS_CLIENT_ID}
